@@ -1,0 +1,39 @@
+
+client ---> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server ---> client: HTML code
+client ---> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server ---> client: main css
+client ---> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server ---> client: main js
+
+#browser note
+client ---> browser execute main js code ---> ajax send HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json 
+server ---> client: [{"content":"HTML is easy","date":"2019-05-23T17:30:31.098Z"},{"content":"Browser can execute only Javascript",...]
+# end browser note
+
+# browser note
+browser listen event [onreadystatechange] ---> trigger handler function to render notes html base on json data return
+# end browser note
+
+# browser note
+input data in text field
+click on submit button
+client ---> server: HTTP POST https://fullstack-exampleapp.herokuapp.com/new_note
+server ---> client: status code: 302
+# end browser note
+
+client ---> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server ---> client: notes HTML code
+client ---> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server ---> client: main css
+client ---> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/notes
+server ---> client: main js
+
+#browser note
+client ---> browser ---> ajax send HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json 
+server ---> client: [{"content":"HTML is easy","date":"2019-05-23T17:30:31.098Z"},{"content":"Browser can execute only Javascript",...]
+# end browser note
+
+# browser note
+browser listen event [onreadystatechange] ---> trigger handler function to render notes html base on json data return
+# end browser note

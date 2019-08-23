@@ -1,0 +1,15 @@
+client ---> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+server ---> client: HTML code
+client ---> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+server ---> client: main css
+client ---> server: HTTP GET https://fullstack-exampleapp.herokuapp.com/spa
+server ---> client: spa js
+
+#browser note
+browser execute spa js code ---> ajax send HTTP GET https://fullstack-exampleapp.herokuapp.com/data.json 
+server ---> client: [{"content":"HTML is easy","date":"2019-05-23T17:30:31.098Z"},{"content":"Browser can execute only Javascript",...]
+# end browser note
+
+# browser note
+browser listen ajax event [onreadystatechange] ---> trigger handler redrawNotes function to render notes html base on json data return
+# end browser note
